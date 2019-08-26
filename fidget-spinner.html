@@ -1,0 +1,77 @@
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <style type="text/css">
+    :root {
+      --root-dimension: 15px;
+    }
+    body {
+      margin-top: 100px;
+    }
+    .circle {
+      padding: var(--root-dimension);
+      position: relative;
+      border: var(--root-dimension) solid;
+      margin: 0 auto;
+      border-radius: 50%;
+      background-color: white;
+    }
+    .parent {
+      width: var(--root-dimension);
+      height: var(--root-dimension);
+      background-color: black;
+      animation: spin 0.75s infinite linear;
+    }
+    .space {
+      border: 1px solid white;
+    }
+    .wing:nth-child(1) {
+      top: calc(0.5 * 100%);
+      left: 50%;
+    }
+    .wing:nth-child(2) {
+      bottom: calc(5 * 100%);
+      left: calc(calc(0.5 * 100%) - calc(5 * 100%));
+    }
+    .wing:nth-child(3) {
+      bottom: calc(calc(13 * 100%) - calc(0.5 * 100%));
+      left: calc(-0.5 * 100%);
+    }
+    .space:nth-child(4) {
+      bottom: calc(10 * 100%);
+      left: calc(-1.5 * 100%);
+    }
+    .space:nth-child(5) {
+      bottom: calc(calc(17 * 100%) + 1px);
+      left: calc(calc(-2.5 * 100%) - 1px);
+    }
+    .space:nth-child(6) {
+      bottom: calc(calc(17.5 * 100%) + 2px);
+      left: calc(2.5 * 100%);
+    }
+
+    @keyframes spin {
+      0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+      }
+      100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+ </head>
+ <body>
+  <div class="circle parent">
+    <div class="circle wing"></div>
+    <div class="circle wing"></div>
+    <div class="circle wing"></div>
+    <div class="circle space"></div>
+    <div class="circle space"></div>
+    <div class="circle space"></div>
+  </div>
+ </body>
+</html>
